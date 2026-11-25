@@ -1,0 +1,53 @@
+name: Code quality
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  lint:
+    name: Lint (blocking)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install ruff==0.17.6
+      - name: Ruff - bugs and error handling
+        run: ruff check MoldMaker tests --output-format=github
+
+  report:
+    name: Readability and maintainability report (advisory)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install ruff==0.17.6 radon==6.0.1
+      - name: Write report
+        run: |
+          {
+            echo "## Code quality report (advisory, does not fail the build)"
+            echo
+            echo "### Style and simplification (ruff: E, W, B, SIM, C90)"
+            echo '```'
+            ruff check MoldMaker --select E,W,B,SIM,C90 --output-format=concise --exit-zero | tail -n 60
+            echo '```'
+            echo
+            echo "### Cyclomatic complexity, rank C or worse (radon). Long, branchy functions are hard to read and reuse."
+            echo '```'
+            radon cc MoldMaker -nC -s
+            echo '```'
+            echo
+            echo "### Maintainability index below A (radon)"
+            echo '```'
+            radon mi MoldMaker -n B -s
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"

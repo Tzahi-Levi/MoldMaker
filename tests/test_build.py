@@ -113,7 +113,6 @@ class OpenBlockBuildTest(unittest.TestCase):
         self.assertGreater(slab.info["bbox"].max[2], plan.block.max[2])
 
     def test_draft_warnings_surface(self):
-        import math
         plan, fa = (None, None)
         p = helpers.params(mold_type="open_block", wall_mm=10, floor_top_mm=10, draft_deg=2.0)
         s = strategies.get_strategy("open_block")

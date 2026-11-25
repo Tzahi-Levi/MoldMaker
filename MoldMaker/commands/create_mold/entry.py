@@ -8,7 +8,7 @@ import dataclasses
 import html
 import os
 import traceback
-from typing import Dict, List, Optional
+from typing import Dict, Optional
 
 import adsk.core
 import adsk.fusion

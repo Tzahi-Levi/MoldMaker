@@ -240,7 +240,7 @@ def place_bolts(
         for i in range(n):
             t = lo + (hi - lo) * (i + 0.5) / n
 
-            def ok(s: float) -> bool:
+            def ok(s: float, line: float = line) -> bool:
                 x, y = xy(s, line)
                 if not fp.is_clear(x, y, r_hole + CAVITY_BOLT_EXTRA):
                     return False

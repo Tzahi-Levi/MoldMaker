@@ -217,7 +217,7 @@ def load_presets(path: Optional[str] = None) -> PresetLibrary:
         with open(path, "r", encoding="utf-8") as fh:
             raw = json.load(fh)
     except FileNotFoundError:
-        raise PresetError([f"Presets file not found: {path}"])
+        raise PresetError([f"Presets file not found: {path}"]) from None
     except json.JSONDecodeError as exc:
-        raise PresetError([f"Presets file is not valid JSON ({path}): {exc}"])
+        raise PresetError([f"Presets file is not valid JSON ({path}): {exc}"]) from exc
     return parse_presets(raw)

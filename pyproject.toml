@@ -1,0 +1,11 @@
+[tool.ruff]
+line-length = 140
+target-version = "py311"
+extend-exclude = ["docs"]
+
+[tool.ruff.lint]
+# Blocking in CI: real bugs and error-handling mistakes.
+select = ["F", "E9", "B904", "B023"]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 15

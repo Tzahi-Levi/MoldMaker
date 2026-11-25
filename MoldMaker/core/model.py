@@ -109,7 +109,7 @@ def frame_for(pull_dir: str) -> PullFrame:
     try:
         return _FRAMES[pull_dir]
     except KeyError:
-        raise ValueError(f"Unknown pull direction {pull_dir!r}; expected one of {PULL_DIRECTIONS}")
+        raise ValueError(f"Unknown pull direction {pull_dir!r}; expected one of {PULL_DIRECTIONS}") from None
 
 
 # -------------------------------------------------------------- footprints

@@ -55,7 +55,7 @@ class VacuumBuckStrategy(MoldStrategy):
         shell, ft = plan.extras["shell"], plan.extras["flange_t"]
         cav = plan.cavity_bbox
         master = adapter.master()
-        (x0, y0, z0), (x1, y1, _) = plan.block.min, plan.block.max
+        (x0, y0, _), (x1, y1, _) = plan.block.min, plan.block.max
 
         buck = adapter.copy(master)
         adapter.union(buck, adapter.box(BBox((x0, y0, cav.min[2] - ft), (x1, y1, cav.min[2]))))

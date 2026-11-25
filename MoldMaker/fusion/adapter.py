@@ -469,7 +469,7 @@ class FusionAdapter:
         for name, (comp, body) in self.real.items():
             flipped = name == "upper" and p.lay_flat
 
-            def local(pt):
+            def local(pt, flipped=flipped):
                 x, y, z = self.frame.to_local(tuple(units.cm_to_mm(c) for c in (pt.x, pt.y, pt.z)))
                 if flipped:  # undo the lay-flat rotation (180 deg about u through the parting plane)
                     y, z = 2.0 * (cv + shift_v / 2.0) - y, 2.0 * pz - z

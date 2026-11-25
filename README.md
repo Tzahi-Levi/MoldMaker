@@ -207,3 +207,9 @@ docs/MANUAL_TEST.md    what to check in Fusion, per phase
 ## License
 
 MIT, see [LICENSE](LICENSE).
+
+## Automation
+
+- **Tests** run on every push and pull request (Ubuntu and Windows, Python 3.11-3.13).
+- **Code quality**: a blocking ruff lint (real bugs, error handling) and an advisory report of style, complexity and maintainability in the run summary.
+- **AI review** comments on pull requests about readability, reusability and code quality. It needs a repository secret named `ANTHROPIC_API_KEY`; without it, the job is skipped. Pull requests from forks are not reviewed, since GitHub withholds secrets from them.
