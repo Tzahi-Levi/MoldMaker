@@ -201,3 +201,7 @@ docs/MANUAL_TEST.md    what to check in Fusion, per phase
 - To add a mold type: write `strategies/<name>.py` (a `plan()` that returns a `MoldPlan` and a `build(plan, adapter)`),
   register it in `strategies/__init__.py`, add UI visibility in `core/ui_rules.py`, and add the type to the
   `allowed_mold_types` of the materials in `presets/materials.json`.
+
+## License
+
+MIT, see [LICENSE](LICENSE).
