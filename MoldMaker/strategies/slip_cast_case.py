@@ -10,7 +10,6 @@ from __future__ import annotations
 import math
 from typing import Any
 
-from ..core import layout
 from ..core.model import BBox, BodyInfo, MoldParams, MoldPlan, PartSpec, PostSpec
 from . import common
 from .base import MoldStrategy

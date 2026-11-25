@@ -7,7 +7,6 @@ mother mold   = envelope offset by the shell thickness, minus the envelope, spli
 from __future__ import annotations
 
 from dataclasses import replace
-from typing import List
 
 from ..core import layout
 from ..core.model import BBox, BodyInfo, MoldParams, MoldPlan, PartSpec

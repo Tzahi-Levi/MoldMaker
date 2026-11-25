@@ -1,7 +1,6 @@
 """Silicone mold box: printed open-top box around the master; silicone is poured around it."""
 from __future__ import annotations
 
-import math
 
 from dataclasses import replace
 

@@ -12,7 +12,7 @@ from __future__ import annotations
 
 import math
 from dataclasses import replace
-from typing import List, Optional, Tuple
+from typing import List, Tuple
 
 from ..core import draft, layout, parting
 from ..core.model import BBox, BodyInfo, KeySpec, MoldParams, MoldPlan, PartSpec, SprueSpec, VentSpec

@@ -1,11 +1,11 @@
 """Two-part rigid mold: block - cavity, split at a planar parting height."""
 from __future__ import annotations
 
-from typing import List, Optional, Tuple
+from typing import List, Tuple
 
 from ..core import layout, parting
 from . import common
-from ..core.model import BodyInfo, BBox, MoldParams, MoldPlan, PartSpec
+from ..core.model import BodyInfo, MoldParams, MoldPlan, PartSpec
 from .base import MoldStrategy
 
 UNDERCUT_WARN_BELOW = 0.98
