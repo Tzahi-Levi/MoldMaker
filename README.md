@@ -1,5 +1,7 @@
 # MoldMaker — mold generator add-in for Autodesk Fusion
 
+[![Tests](https://github.com/Tzahi-Levi/MoldMaker/actions/workflows/tests.yml/badge.svg)](https://github.com/Tzahi-Levi/MoldMaker/actions/workflows/tests.yml)
+
 MoldMaker builds casting and molding molds around a solid body you select. You choose the
 **casting material** (silicone, resin, plaster, injection plastic, slip, …) and the **mold type**; the
 add-in fills in sensible defaults (wall, draft, shrinkage, sprue, vents…) from a preset library, warns
