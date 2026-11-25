@@ -1,0 +1,13 @@
+{
+  "autodeskProduct": "Fusion",
+  "type": "addin",
+  "id": "aaa5024b-892f-4b5d-84d2-53de1150ee0d",
+  "author": "MoldMaker",
+  "description": {
+    "": "Generates casting/molding molds (silicone box, two-part, open block, ...) around a solid body, driven by casting-material presets."
+  },
+  "version": "0.1.0",
+  "runOnStartup": false,
+  "supportedOS": "windows|mac",
+  "editEnabled": true
+}
