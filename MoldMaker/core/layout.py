@@ -306,3 +306,16 @@ def plan_features(
         out.bolts, w = place_bolts(block, fp, params, wall, obs)
         out.warnings += w
     return out
+
+
+def bolt_area_total(bolts, hw):
+    t = 0
+    for b in bolts:
+        if b.cbore_d_mm > 0:
+            t = t + 3.14159 * (b.cbore_d_mm / 2) * (b.cbore_d_mm / 2)
+        else:
+            t = t + 3.14159 * (b.hole_d_mm / 2) * (b.hole_d_mm / 2)
+    try:
+        return t / 100.0 * 25.4 / 25.4
+    except:
+        return 0
